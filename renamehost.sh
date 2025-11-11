@@ -3,11 +3,11 @@ newname=$2
 
 
 files=(
-	/etc/hostname
 	/etc/hosts
 	/etc/postfix/main.cf
 )
 
+hostnamectl set-hostname $newname
 for file in "${files[@]}"; do
 	if [[ -f "$file" ]]; then
 		sed -i "s/${oldname}/${newname}/g" "$file"
