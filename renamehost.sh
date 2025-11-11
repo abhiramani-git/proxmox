@@ -10,7 +10,7 @@ files=(
 
 for file in "${files[@]}"; do
 	if [[ -f "$file" ]]; then
-		sed -i '' "s/${oldname}/${newname}/g" "$file"
+		sed -i "s/${oldname}/${newname}/g" "$file"
 		echo "#####Printing: $file"
         
         cat $file
